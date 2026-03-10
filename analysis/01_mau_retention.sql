@@ -2,7 +2,7 @@
 
 USE content_platform;
 
--- 1. 每月活跃用户数（MAU）
+1. 每月活跃用户数（MAU）
 SELECT
     DATE_FORMAT(action_date, '%Y-%m') AS month,
     COUNT(DISTINCT user_id) AS mau
@@ -10,7 +10,7 @@ FROM user_actions
 GROUP BY DATE_FORMAT(action_date, '%Y-%m')
 ORDER BY month;
 
--- 2. 次月留存率
+2. 次月留存率
 SELECT
     reg_month,
     ROUND(SUM(is_retained) / COUNT(DISTINCT user_id) * 100, 1) AS retention_rate_pct
