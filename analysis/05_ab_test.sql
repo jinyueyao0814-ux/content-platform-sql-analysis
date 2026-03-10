@@ -1,10 +1,8 @@
--- ================================
--- 模块五：A/B测试分析
--- ================================
+模块五：A/B测试分析
 
 USE content_platform;
 
--- 1. A/B两组整体点击率与转化率
+1. A/B两组整体点击率与转化率
 SELECT
     group_name,
     COUNT(user_id) AS user_count,
@@ -13,7 +11,7 @@ SELECT
 FROM ab_test
 GROUP BY group_name;
 
--- 2. 点击用户中的转化率（排除未点击用户）
+2. 点击用户中的转化率（排除未点击用户）
 SELECT
     group_name,
     COUNT(user_id) AS clicked_user_count,
